@@ -184,7 +184,7 @@ nav ul li .nav-btn:hover {
 .carousel-container {
     position: relative;
     width: 100%;
-    height: 450px;
+    aspect-ratio: 3 / 2; /* Adapta el alto automáticamente según el ancho */
     overflow: hidden;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
@@ -198,7 +198,6 @@ nav ul li .nav-btn:hover {
     height: 100%;
     opacity: 0;
     transition: opacity 0.8s ease-in-out;
-    background-color: #1a1a1a; /* Fondo oscuro opcional para los bordes si la foto es más angosta */
 }
 
 .carousel-slide.active {
@@ -208,7 +207,7 @@ nav ul li .nav-btn:hover {
 .carousel-slide img {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Muestra la imagen completa sin recortar nada */
+    object-fit: cover; /* Llenará el cuadro a la perfección sin deformar ni recortar */
 }
 
 .carousel-caption {
