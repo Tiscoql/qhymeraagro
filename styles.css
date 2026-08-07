@@ -289,7 +289,7 @@ nav ul li .nav-btn:hover {
     font-size: 1.05rem;
 }
 
-/* Estilos de la Sección Productos (Imagen Banner y Descripción Inferior) */
+/* Estilos de la Sección Productos (Banner General) */
 .products-banner-container {
     text-align: center;
     margin-bottom: 2rem;
@@ -325,7 +325,103 @@ nav ul li .nav-btn:hover {
     font-size: 1.05rem;
 }
 
-/* Tarjetas (Misión, Visión, Productos) */
+/* Catálogo de Productos Individuales */
+.products-catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 1rem 0;
+}
+
+.product-item-card {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e2e8f0;
+}
+
+.product-item-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.product-item-card.featured-product {
+    border: 2px solid #27ae60;
+}
+
+.product-img-wrapper {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    background-color: #f7fafc;
+}
+
+.product-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.product-badge.badge-star {
+    background: #27ae60;
+    font-weight: 700;
+}
+
+.product-info {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.product-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 0.5rem;
+}
+
+.product-description {
+    font-size: 0.95rem;
+    color: #4a5568;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.product-btn {
+    display: inline-block;
+    text-align: center;
+    background-color: #27ae60;
+    color: #ffffff;
+    padding: 0.7rem 1.2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.product-btn:hover {
+    background-color: #1e8449;
+}
+
+/* Tarjetas (Misión, Visión, Generales) */
 .grid-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -858,11 +954,17 @@ footer {
     text-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
 }
 
-/* Responsivo */
+/* Responsivo (Media Queries) */
 @media (max-width: 768px) {
     .nav-container {
         flex-direction: column;
         gap: 1rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
     }
     
     .hero h1 {
