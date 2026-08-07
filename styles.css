@@ -22,14 +22,17 @@ body {
     color: var(--text-color);
     background-color: var(--bg-light);
     line-height: 1.7;
+    padding-top: 90px; /* Compensación para el header fijo */
 }
 
-/* Header / Navegación */
+/* Header / Navegación Fija */
 header {
     background-color: var(--white);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    width: 100%;
     z-index: 1000;
 }
 
@@ -287,6 +290,51 @@ nav ul li .nav-btn:hover {
 .section-title p {
     color: #64748b;
     font-size: 1.05rem;
+}
+
+/* Tarjetas Informativas Generales (Para secciones tipo Línea Industrial / Garantía) */
+.section-card,
+.info-card {
+    background-color: var(--white);
+    border-radius: 12px;
+    padding: 2.5rem;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    border-top: 5px solid var(--primary-green);
+    overflow: hidden;
+}
+
+.section-card.blue-border,
+.info-card.blue-border {
+    border-top-color: var(--primary-blue);
+}
+
+.section-card h2, .section-card h3,
+.info-card h2, .info-card h3 {
+    color: var(--primary-blue);
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.section-card p,
+.info-card p {
+    color: #4a5568;
+    font-size: 1.05rem;
+    margin-bottom: 1rem;
+}
+
+.section-card ul,
+.info-card ul {
+    margin-left: 1.5rem;
+    margin-top: 0.8rem;
+    color: #4a5568;
+}
+
+.section-card ul li,
+.info-card ul li {
+    margin-bottom: 0.5rem;
 }
 
 /* Estilos de la Sección Productos (Banner General) */
@@ -956,6 +1004,10 @@ footer {
 
 /* Responsivo (Media Queries) */
 @media (max-width: 768px) {
+    body {
+        padding-top: 130px; /* Mayor padding en pantallas pequeñas por la altura del menú */
+    }
+
     .nav-container {
         flex-direction: column;
         gap: 1rem;
