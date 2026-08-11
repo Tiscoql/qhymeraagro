@@ -1,17 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Roboto:wght@400;500;700&display=swap');
+
 :root {
-    --primary-blue: #0066cc;
-    --primary-green: #4caf50;
-    --dark-green: #2e7d32;
-    --text-color: #2c3e50;
-    --bg-light: #f8fafc;
+    /* Paleta de colores orgánicos y naturales extraída del logo */
+    --primary-green: #2e7d32;   /* Verde hoja agrícola brillante */
+    --dark-green: #1b4d2e;      /* Verde boscoso profundo */
+    --light-green: #e8f5e9;     /* Fondo suave con tinte natural */
+    --primary-blue: #0277bd;    /* Azul agua/orgánico del texto del logo */
+    --dark-blue: #01579b;       /* Azul marino profundo */
+    --text-color: #1e2923;      /* Verde oscuro casi negro para texto legible */
+    --bg-light: #f4f7f4;        /* Fondo claro con matiz verde suave */
     --white: #ffffff;
+    --earth-accent: #6d4c41;   /* Acento tono tierra */
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat', 'Roboto', sans-serif;
 }
 
 html {
@@ -28,7 +34,7 @@ body {
 /* Header / Navegación Fija */
 header {
     background-color: var(--white);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 10px rgba(27, 77, 46, 0.08);
     position: fixed;
     top: 0;
     left: 0;
@@ -48,7 +54,7 @@ header {
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 12px;
     text-decoration: none;
 }
 
@@ -58,10 +64,25 @@ header {
     object-fit: contain;
 }
 
+/* Contenedor apilado para Título + Subtítulo */
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.2;
+}
+
 .brand-name {
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-size: 1.4rem;
+    font-weight: 800;
     color: var(--primary-blue);
+}
+
+.brand-subtitle {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--primary-green);
+    letter-spacing: 0.5px;
 }
 
 nav ul {
@@ -74,7 +95,7 @@ nav ul {
 nav a {
     text-decoration: none;
     color: var(--text-color);
-    font-weight: 500;
+    font-weight: 600;
     transition: color 0.3s ease;
 }
 
@@ -90,8 +111,8 @@ nav ul li a.active {
 nav ul li .nav-btn {
     background-color: var(--primary-green);
     color: var(--white);
-    padding: 8px 18px;
-    border-radius: 20px;
+    padding: 10px 22px;
+    border-radius: 25px;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
@@ -103,22 +124,22 @@ nav ul li .nav-btn:hover {
 
 /* Hero Banner */
 .hero {
-    background: linear-gradient(135deg, rgba(0, 102, 204, 0.85), rgba(46, 125, 50, 0.85)), 
+    background: linear-gradient(135deg, rgba(2, 119, 189, 0.85), rgba(27, 77, 46, 0.88)), 
                 url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
     color: var(--white);
     text-align: center;
-    padding: 5rem 1.5rem;
+    padding: 6rem 1.5rem;
 }
 
 .hero h1 {
-    font-size: 2.5rem;
+    font-size: 2.7rem;
     margin-bottom: 1rem;
-    font-weight: 700;
+    font-weight: 800;
 }
 
 .hero p {
-    font-size: 1.2rem;
-    max-width: 700px;
+    font-size: 1.25rem;
+    max-width: 750px;
     margin: 0 auto;
     opacity: 0.95;
 }
@@ -133,29 +154,30 @@ nav ul li .nav-btn:hover {
 
 .hero-btn {
     text-decoration: none;
-    padding: 0.75rem 1.8rem;
+    padding: 0.85rem 2rem;
     border-radius: 30px;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 1rem;
     transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .btn-mision, .btn-vision {
-    background-color: transparent;
+    background-color: var(--primary-green);
     color: var(--white);
     border: 2px solid var(--primary-green);
 }
 
 .btn-mision:hover, .btn-vision:hover {
-    background-color: var(--white);
-    color: var(--primary-blue);
+    background-color: var(--dark-green);
+    border-color: var(--dark-green);
+    color: var(--white);
     transform: translateY(-3px);
 }
 
 /* Subpáginas Header */
 .page-header {
-    background: linear-gradient(135deg, rgba(0, 102, 204, 0.9), rgba(46, 125, 50, 0.9)),
+    background: linear-gradient(135deg, rgba(2, 119, 189, 0.9), rgba(27, 77, 46, 0.9)),
                 url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
     color: var(--white);
     text-align: center;
@@ -165,6 +187,7 @@ nav ul li .nav-btn:hover {
 .page-header h1 {
     font-size: 2.5rem;
     margin-bottom: 0.8rem;
+    font-weight: 800;
 }
 
 .page-header p {
@@ -184,10 +207,10 @@ nav ul li .nav-btn:hover {
 .carousel-container {
     position: relative;
     width: 100%;
-    aspect-ratio: 3 / 2; /* Adapta el alto automáticamente según el ancho */
+    aspect-ratio: 3 / 2;
     overflow: hidden;
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 20px rgba(27, 77, 46, 0.12);
 }
 
 .carousel-slide {
@@ -207,7 +230,7 @@ nav ul li .nav-btn:hover {
 .carousel-slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Llenará el cuadro a la perfección sin deformar ni recortar */
+    object-fit: cover;
 }
 
 .carousel-caption {
@@ -215,7 +238,7 @@ nav ul li .nav-btn:hover {
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+    background: linear-gradient(transparent, rgba(27, 77, 46, 0.85));
     color: var(--white);
     padding: 2rem 1.5rem 1rem 1.5rem;
     font-size: 1.1rem;
@@ -225,7 +248,7 @@ nav ul li .nav-btn:hover {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(27, 77, 46, 0.6);
     color: var(--white);
     border: none;
     width: 45px;
@@ -238,7 +261,7 @@ nav ul li .nav-btn:hover {
 }
 
 .carousel-btn:hover {
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(27, 77, 46, 0.9);
 }
 
 .prev-btn { left: 15px; }
@@ -283,24 +306,25 @@ nav ul li .nav-btn:hover {
 
 .section-title h2 {
     font-size: 2rem;
-    color: var(--primary-blue);
+    color: var(--dark-green);
     margin-bottom: 0.5rem;
+    font-weight: 800;
 }
 
 .section-title p {
-    color: #64748b;
+    color: #4a6352;
     font-size: 1.05rem;
 }
 
-/* Tarjetas Informativas Generales (Para secciones tipo Línea Industrial / Garantía) */
+/* Tarjetas Informativas Generales */
 .section-card,
 .info-card {
     background-color: var(--white);
     border-radius: 12px;
     padding: 2.5rem;
     margin-bottom: 2.5rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 15px rgba(27, 77, 46, 0.05);
+    border: 1px solid #d8e2dc;
     border-top: 5px solid var(--primary-green);
     overflow: hidden;
 }
@@ -312,7 +336,7 @@ nav ul li .nav-btn:hover {
 
 .section-card h2, .section-card h3,
 .info-card h2, .info-card h3 {
-    color: var(--primary-blue);
+    color: var(--dark-green);
     font-size: 1.6rem;
     margin-bottom: 1rem;
     font-weight: 700;
@@ -320,7 +344,7 @@ nav ul li .nav-btn:hover {
 
 .section-card p,
 .info-card p {
-    color: #4a5568;
+    color: #384e40;
     font-size: 1.05rem;
     margin-bottom: 1rem;
 }
@@ -329,7 +353,7 @@ nav ul li .nav-btn:hover {
 .info-card ul {
     margin-left: 1.5rem;
     margin-top: 0.8rem;
-    color: #4a5568;
+    color: #384e40;
 }
 
 .section-card ul li,
@@ -337,7 +361,7 @@ nav ul li .nav-btn:hover {
     margin-bottom: 0.5rem;
 }
 
-/* Estilos de la Sección Productos (Banner General) */
+/* Estilos de la Sección Productos */
 .products-banner-container {
     text-align: center;
     margin-bottom: 2rem;
@@ -349,7 +373,7 @@ nav ul li .nav-btn:hover {
     max-height: 350px;
     object-fit: cover;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(27, 77, 46, 0.1);
 }
 
 .products-description {
@@ -357,18 +381,18 @@ nav ul li .nav-btn:hover {
     background: var(--white);
     padding: 2rem;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    border-top: 4px solid var(--primary-blue);
+    box-shadow: 0 4px 15px rgba(27, 77, 46, 0.05);
+    border-top: 4px solid var(--primary-green);
 }
 
 .products-description h3 {
-    color: var(--primary-blue);
+    color: var(--dark-green);
     margin-bottom: 0.8rem;
     font-size: 1.3rem;
 }
 
 .products-description p {
-    color: #4a5568;
+    color: #384e40;
     line-height: 1.7;
     font-size: 1.05rem;
 }
@@ -382,30 +406,30 @@ nav ul li .nav-btn:hover {
 }
 
 .product-item-card {
-    background: #ffffff;
+    background: var(--white);
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 15px rgba(27, 77, 46, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
-    border: 1px solid #e2e8f0;
+    border: 1px solid #d8e2dc;
 }
 
 .product-item-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 25px rgba(27, 77, 46, 0.15);
 }
 
 .product-item-card.featured-product {
-    border: 2px solid #27ae60;
+    border: 2px solid var(--primary-green);
 }
 
 .product-img-wrapper {
     position: relative;
     width: 100%;
     height: 200px;
-    background-color: #f7fafc;
+    background-color: var(--light-green);
 }
 
 .product-img-wrapper img {
@@ -418,8 +442,8 @@ nav ul li .nav-btn:hover {
     position: absolute;
     top: 12px;
     right: 12px;
-    background: rgba(0, 0, 0, 0.7);
-    color: #ffffff;
+    background: rgba(27, 77, 46, 0.8);
+    color: var(--white);
     padding: 4px 10px;
     border-radius: 20px;
     font-size: 0.8rem;
@@ -427,7 +451,7 @@ nav ul li .nav-btn:hover {
 }
 
 .product-badge.badge-star {
-    background: #27ae60;
+    background: var(--primary-green);
     font-weight: 700;
 }
 
@@ -441,13 +465,13 @@ nav ul li .nav-btn:hover {
 .product-title {
     font-size: 1.25rem;
     font-weight: 700;
-    color: #2d3748;
+    color: var(--dark-green);
     margin-bottom: 0.5rem;
 }
 
 .product-description {
     font-size: 0.95rem;
-    color: #4a5568;
+    color: #384e40;
     line-height: 1.5;
     margin-bottom: 1.5rem;
     flex-grow: 1;
@@ -456,8 +480,8 @@ nav ul li .nav-btn:hover {
 .product-btn {
     display: inline-block;
     text-align: center;
-    background-color: #27ae60;
-    color: #ffffff;
+    background-color: var(--primary-green);
+    color: var(--white);
     padding: 0.7rem 1.2rem;
     border-radius: 8px;
     text-decoration: none;
@@ -466,7 +490,7 @@ nav ul li .nav-btn:hover {
 }
 
 .product-btn:hover {
-    background-color: #1e8449;
+    background-color: var(--dark-green);
 }
 
 /* Tarjetas (Misión, Visión, Generales) */
@@ -480,7 +504,7 @@ nav ul li .nav-btn:hover {
     background: var(--white);
     padding: 2.5rem;
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 20px rgba(27, 77, 46, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border-top: 6px solid var(--primary-green);
 }
@@ -490,13 +514,13 @@ nav ul li .nav-btn:hover {
 }
 
 .card.featured-card {
-    border-top-color: #d4af37;
-    background: linear-gradient(to bottom, #ffffff, #fffdfa);
+    border-top-color: #8d6e63;
+    background: linear-gradient(to bottom, #ffffff, #fcfaf8);
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 30px rgba(27, 77, 46, 0.12);
 }
 
 .card-icon {
@@ -508,18 +532,18 @@ nav ul li .nav-btn:hover {
 .card h2 {
     font-size: 1.6rem;
     margin-bottom: 1rem;
-    color: var(--text-color);
+    color: var(--dark-green);
 }
 
 .card p {
-    color: #4a5568;
+    color: #384e40;
     font-size: 1.05rem;
     margin-bottom: 1rem;
 }
 
 .card ul {
     margin-left: 1.2rem;
-    color: #4a5568;
+    color: #384e40;
 }
 
 /* Sobre la Empresa */
@@ -527,7 +551,7 @@ nav ul li .nav-btn:hover {
     background-color: var(--white);
     padding: 2.5rem;
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 20px rgba(27, 77, 46, 0.05);
     border-left: 5px solid var(--primary-green);
     font-size: 1.1rem;
     line-height: 1.8;
@@ -544,7 +568,7 @@ nav ul li .nav-btn:hover {
     background: var(--white);
     padding: 2rem;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 15px rgba(27, 77, 46, 0.05);
     text-align: center;
     transition: transform 0.3s ease;
 }
@@ -560,11 +584,11 @@ nav ul li .nav-btn:hover {
 
 .benefit-item h3 {
     margin-bottom: 0.5rem;
-    color: var(--text-color);
+    color: var(--dark-green);
 }
 
 .benefit-item p {
-    color: #64748b;
+    color: #4a6352;
     font-size: 0.95rem;
 }
 
@@ -580,13 +604,13 @@ nav ul li .nav-btn:hover {
     padding: 1.5rem;
     border-radius: 12px;
     text-align: center;
-    border: 1px solid #e2e8f0;
+    border: 1px solid #d8e2dc;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .crop-card:hover {
     border-color: var(--primary-green);
-    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.15);
+    box-shadow: 0 4px 15px rgba(46, 125, 50, 0.15);
 }
 
 .crop-emoji {
@@ -597,7 +621,7 @@ nav ul li .nav-btn:hover {
 
 .crop-card h3 {
     font-size: 1.1rem;
-    color: var(--text-color);
+    color: var(--dark-green);
 }
 
 /* Preguntas Frecuentes (Accordion) */
@@ -612,8 +636,8 @@ nav ul li .nav-btn:hover {
 .faq-item {
     background: var(--white);
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
-    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 10px rgba(27, 77, 46, 0.04);
+    border: 1px solid #d8e2dc;
     overflow: hidden;
 }
 
@@ -621,7 +645,7 @@ nav ul li .nav-btn:hover {
     padding: 1.2rem;
     font-size: 1.05rem;
     font-weight: 600;
-    color: var(--text-color);
+    color: var(--dark-green);
     cursor: pointer;
     list-style: none;
     display: flex;
@@ -636,7 +660,7 @@ nav ul li .nav-btn:hover {
 .faq-question::after {
     content: '+';
     font-size: 1.4rem;
-    color: var(--primary-blue);
+    color: var(--primary-green);
     transition: transform 0.3s ease;
 }
 
@@ -646,7 +670,7 @@ details[open] .faq-question::after {
 
 .faq-answer {
     padding: 0 1.2rem 1.2rem 1.2rem;
-    color: #4a5568;
+    color: #384e40;
     line-height: 1.6;
 }
 
@@ -665,7 +689,7 @@ details[open] .faq-question::after {
     display: flex;
     gap: 2rem;
     align-items: flex-start;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 20px rgba(27, 77, 46, 0.05);
     border-left: 6px solid var(--primary-blue);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -676,12 +700,12 @@ details[open] .faq-question::after {
 
 .service-detail-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 25px rgba(27, 77, 46, 0.1);
 }
 
 .service-icon {
     font-size: 3rem;
-    background-color: var(--bg-light);
+    background-color: var(--light-green);
     padding: 1rem;
     border-radius: 12px;
     line-height: 1;
@@ -689,12 +713,12 @@ details[open] .faq-question::after {
 
 .service-info h2 {
     font-size: 1.5rem;
-    color: var(--text-color);
+    color: var(--dark-green);
     margin-bottom: 0.8rem;
 }
 
 .service-info p {
-    color: #4a5568;
+    color: #384e40;
     margin-bottom: 1rem;
     line-height: 1.6;
 }
@@ -708,7 +732,7 @@ details[open] .faq-question::after {
 
 .service-features li {
     font-size: 0.95rem;
-    color: #2d3748;
+    color: #2e3d33;
     position: relative;
     padding-left: 1.2rem;
 }
@@ -722,7 +746,7 @@ details[open] .faq-question::after {
 }
 
 .services-cta {
-    background: linear-gradient(135deg, var(--primary-blue), var(--dark-green));
+    background: linear-gradient(135deg, var(--dark-blue), var(--dark-green));
     color: var(--white);
     border-radius: 12px;
     padding: 3rem 2rem;
@@ -744,7 +768,7 @@ details[open] .faq-question::after {
 .cta-btn {
     display: inline-block;
     background-color: var(--white);
-    color: var(--primary-blue);
+    color: var(--dark-green);
     text-decoration: none;
     padding: 0.9rem 2rem;
     border-radius: 30px;
@@ -755,7 +779,7 @@ details[open] .faq-question::after {
 
 .cta-btn:hover {
     transform: translateY(-3px);
-    background-color: var(--bg-light);
+    background-color: var(--light-green);
 }
 
 /* Formulario de Contacto */
@@ -765,19 +789,19 @@ details[open] .faq-question::after {
     margin: 4rem auto 2rem auto;
     padding: 3rem 2rem;
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 20px rgba(27, 77, 46, 0.08);
 }
 
 .contact-section h2 {
     text-align: center;
-    color: var(--primary-blue);
+    color: var(--dark-green);
     font-size: 2rem;
     margin-bottom: 0.5rem;
 }
 
 .contact-section p {
     text-align: center;
-    color: #64748b;
+    color: #4a6352;
     margin-bottom: 2rem;
 }
 
@@ -794,7 +818,7 @@ details[open] .faq-question::after {
 }
 
 .form-group label {
-    font-weight: 500;
+    font-weight: 600;
     color: var(--text-color);
     font-size: 0.95rem;
 }
@@ -803,7 +827,7 @@ details[open] .faq-question::after {
 .form-group textarea {
     width: 100%;
     padding: 0.8rem 1rem;
-    border: 1px solid #cbd5e1;
+    border: 1px solid #c2d4c8;
     border-radius: 8px;
     font-size: 1rem;
     outline: none;
@@ -812,12 +836,12 @@ details[open] .faq-question::after {
 
 .form-group input:focus,
 .form-group textarea:focus {
-    border-color: var(--primary-blue);
-    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.15);
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.15);
 }
 
 .submit-btn {
-    background-color: var(--primary-blue);
+    background-color: var(--primary-green);
     color: var(--white);
     border: none;
     padding: 0.9rem;
@@ -830,7 +854,7 @@ details[open] .faq-question::after {
 }
 
 .submit-btn:hover {
-    background-color: #0052a3;
+    background-color: var(--dark-green);
     transform: translateY(-2px);
 }
 
@@ -899,9 +923,9 @@ details[open] .faq-question::after {
     50% { transform: translateY(-4px); }
 }
 
-/* Pie de Página (Footer) */
+/* Pie de Página (Footer Boscoso) */
 footer {
-    background-color: #1e293b;
+    background-color: var(--dark-green);
     color: var(--white);
     padding: 3rem 1.5rem 1.5rem 1.5rem;
     margin-top: 5rem;
@@ -941,12 +965,12 @@ footer {
 
 .footer-brand-name {
     font-size: 1.4rem;
-    font-weight: 700;
+    font-weight: 800;
     color: var(--white);
 }
 
 .footer-brand p {
-    color: #94a3b8;
+    color: #a3c4ae;
     font-size: 0.95rem;
     line-height: 1.6;
     text-align: left;
@@ -968,26 +992,26 @@ footer {
 
 .footer-links a,
 .footer-bottom a {
-    color: #94a3b8;
+    color: #a3c4ae;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .footer-links a:hover {
-    color: var(--primary-green);
+    color: var(--white);
 }
 
 .footer-bottom {
     max-width: 1100px;
     margin: 0 auto;
     padding-top: 1.5rem;
-    border-top: 1px solid #334155;
+    border-top: 1px solid #2d6a43;
     text-align: center;
 }
 
 .footer-bottom p {
     font-size: 0.88rem;
-    color: #94a3b8;
+    color: #a3c4ae;
 }
 
 .creator-link {
@@ -1005,7 +1029,7 @@ footer {
 /* Responsivo (Media Queries) */
 @media (max-width: 768px) {
     body {
-        padding-top: 130px; /* Mayor padding en pantallas pequeñas por la altura del menú */
+        padding-top: 130px;
     }
 
     .nav-container {
