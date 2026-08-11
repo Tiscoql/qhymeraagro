@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QhymerAgro - Soluciones Agrícolas Sustentables</title>
     
-    <!-- Meta etiquetas Open Graph (WhatsApp, Facebook, Instagram, LinkedIn) -->
+    <!-- Meta etiquetas Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.qhymeraagro.com/">
     <meta property="og:title" content="QhymerAgro - Nutrición Agrícola y Granulados">
@@ -29,6 +29,7 @@
     <link rel="icon" type="image/png" href="img/favicon.png?v=2">
 </head>
 <body>
+
     <!-- Encabezado -->
     <header>
         <div class="nav-container">
@@ -39,7 +40,7 @@
                     <span class="brand-subtitle">Soluciones Agrícolas</span>
                 </div>
             </a>
-            <nav>
+            <nav aria-label="Navegación principal">
                 <ul>
                     <li><a href="#inicio" class="active">Inicio</a></li>
                     <li><a href="/servicios">Servicios</a></li>
@@ -61,34 +62,30 @@
     </section>
 
     <!-- Carrusel de Galería -->
-    <section class="carousel-section" id="galeria">
+    <section class="carousel-section" id="galeria" aria-label="Galería de productos">
         <div class="carousel-container">
-            <!-- 1. Granulados Arriba -->
             <div class="carousel-slide active">
                 <img src="img/granulados.png" alt="Fertilizantes Granulados Agrícolas">
                 <div class="carousel-caption">Fertilizantes Granulados: Sulfatos, Cloruros y Nitratos</div>
             </div>
             
-            <!-- 2. Enmiendas y Suelos -->
             <div class="carousel-slide">
                 <img src="img/enmiendas.png" alt="Enmiendas Agrícolas de Suelo">
                 <div class="carousel-caption">Enmiendas Agrícolas: Cal, Yeso, Dolomita y Guano Rojo</div>
             </div>
 
-            <!-- 3. Polvos y Líquidos -->
             <div class="carousel-slide">
                 <img src="img/polvos_liquidos.png" alt="Formulaciones Solubles en Polvo y Líquidas">
                 <div class="carousel-caption">Formulaciones Especializadas: Polvos Solubles y Bioestimulantes Líquidos</div>
             </div>
 
-            <!-- 4. Producto Estrella -->
             <div class="carousel-slide">
                 <img src="img/suelos_fertiles.png" alt="Producto estrella Huechum qhymera">
                 <div class="carousel-caption">Huechum qhymera: Desarrollo 100% Natural para el Agro</div>
             </div>
 
-            <button class="carousel-btn prev-btn">&#10094;</button>
-            <button class="carousel-btn next-btn">&#10095;</button>
+            <button class="carousel-btn prev-btn" aria-label="Imagen anterior">&#10094;</button>
+            <button class="carousel-btn next-btn" aria-label="Siguiente imagen">&#10095;</button>
 
             <div class="carousel-dots">
                 <span class="dot active"></span>
@@ -114,7 +111,7 @@
     <main class="container">
         <div class="grid-cards">
             <article class="card" id="mision">
-                <div class="card-icon">🌱</div>
+                <div class="card-icon" aria-hidden="true">🌱</div>
                 <h2>Misión</h2>
                 <p>
                     Impulsar la producción agrícola e industrial mediante el suministro de fertilizantes de alta calidad. Optimizamos la nutrición de los cultivos y la estructura del suelo de manera sostenible.
@@ -122,7 +119,7 @@
             </article>
 
             <article class="card vision-card" id="vision">
-                <div class="card-icon">👁️</div>
+                <div class="card-icon" aria-hidden="true">👁️</div>
                 <h2>Visión</h2>
                 <p>
                     Ser la empresa líder y referente en nutrición agrícola, acondicionamiento de suelos y soluciones industriales, reconocida por la calidad de nuestras formulaciones y un servicio integral.
@@ -131,315 +128,350 @@
         </div>
     </main>
 
-    <!-- Sección de Productos e Industria -->
-    <section class="section-container" id="productos">
-        <div class="section-title">
-            <h2>Nuestros Productos</h2>
-            <p>Catálogo completo de soluciones nutricionales agrícolas e insumos industriales.</p>
-        </div>
+<!-- Sección de Productos Unificada con Filtros -->
+<section class="section-container" id="productos">
+    <div class="section-title">
+        <h2>Nuestros Productos</h2>
+        <p>Selecciona una categoría para filtrar nuestro catálogo de soluciones agrícolas e industriales.</p>
+    </div>
 
-        <!-- CATEGORÍA 1: FERTILIZANTES LÍQUIDOS -->
-        <div class="category-header">
-            <h3>💧 Fertilizantes Líquidos</h3>
-        </div>
-        <div class="products-catalog-grid">
-            <article class="product-item-card">
-                <div class="product-img-wrapper">
-                    <img src="img/polvos_liquidos.png" alt="QhymerAgro N-P-K">
-                    <span class="product-badge">Líquido</span>
-                </div>
-                <div class="product-info">
-                    <h3 class="product-title">QhymerAgro N-P-K</h3>
-                    <p class="product-description">Formulación balanceada de nitrógeno, fósforo y potasio de rápida absorción.</p>
-                    <a href="#contacto" class="product-btn">Cotizar</a>
-                </div>
-            </article>
+    <!-- Barra de Filtros -->
+    <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn" data-filter="liquidos">💧 Liquidos</button>
+        <button class="filter-btn" data-filter="granulados">🌱 Granulados</button>
+        <button class="filter-btn" data-filter="polvos">🍃 Polvos y Solubles</button>
+        <button class="filter-btn" data-filter="industrial">🏭 Industrial</button>
+    </div>
 
-            <article class="product-item-card">
-                <div class="product-img-wrapper">
-                    <img src="img/polvos_liquidos.png" alt="QhymerAgro Nitrol 26">
-                    <span class="product-badge">Líquido</span>
-                </div>
-                <div class="product-info">
-                    <h3 class="product-title">QhymerAgro Nitrol 26</h3>
-                    <p class="product-description">Fuente concentrada de nitrógeno foliar y radicular de alta eficiencia.</p>
-                    <a href="#contacto" class="product-btn">Cotizar</a>
-                </div>
-            </article>
+    <!-- Catálogo Único de Productos -->
+    <div class="products-catalog-grid">
 
-            <article class="product-item-card">
-                <div class="product-img-wrapper">
-                    <img src="img/polvos_liquidos.png" alt="QhymerAgro Fosfato de Urea">
-                    <span class="product-badge">Líquido</span>
-                </div>
-                <div class="product-info">
-                    <h3 class="product-title">Fosfato de Urea</h3>
-                    <p class="product-description">Aporte acidificante de fósforo y nitrógeno para sistemas de riego.</p>
-                    <a href="#contacto" class="product-btn">Cotizar</a>
-                </div>
-            </article>
-
-            <article class="product-item-card">
-                <div class="product-img-wrapper">
-                    <img src="img/polvos_liquidos.png" alt="QhymerAgro Citrato de Potasio">
-                    <span class="product-badge">Líquido</span>
-                </div>
-                <div class="product-info">
-                    <h3 class="product-title">Citrato de Potasio</h3>
-                    <p class="product-description">Estimula el llenado, calibre y maduración de frutos de alta calidad.</p>
-                    <a href="#contacto" class="product-btn">Cotizar</a>
-                </div>
-            </article>
-
-            <article class="product-item-card">
-                <div class="product-img-wrapper">
-                    <img src="img/polvos_liquidos.png" alt="QhymerAgro Ácido Fosfórico">
-                    <span class="product-badge">Líquido</span>
-                </div>
-                <div class="product-info">
-                    <h3 class="product-title">Ácido Fosfórico</h3>
-                    <p class="product-description">Acondicionador de agua, corrector de pH y corrector nutricional.</p>
-                    <a href="#contacto" class="product-btn">Cotizar</a>
-                </div>
-            </article>
-
-            <article class="product-item-card">
-                <div class="product-img-wrapper">
-                    <img src="img/polvos_liquidos.png" alt="QhymerAgro Fosfato Dipotásico">
-                    <span class="product-badge">Líquido</span>
-                </div>
-                <div class="product-info">
-                    <h3 class="product-title">Fosfato Dipotásico</h3>
-                    <p class="product-description">Nutrición de rápida asimilación para etapas de floración y cuajado.</p>
-                    <a href="#contacto" class="product-btn">Cotizar</a>
-                </div>
-            </article>
-
-            <article class="product-item-card">
-                <div class="product-img-wrapper">
-                    <img src="img/polvos_liquidos.png" alt="QhymerAgro Urea Líquida">
-                    <span class="product-badge">Líquido</span>
-                </div>
-                <div class="product-info">
-                    <h3 class="product-title">Urea Líquida</h3>
-                    <p class="product-description">Suministro directo de nitrógeno altamente disponible.</p>
-                    <a href="#contacto" class="product-btn">Cotizar</a>
-                </div>
-            </article>
-
-            <article class="product-item-card">
-                <div class="product-img-wrapper">
-                    <img src="img/polvos_liquidos.png" alt="QhymerAgro Nitrato de Zinc">
-                    <span class="product-badge">Líquido</span>
-                </div>
-                <div class="product-info">
-                    <h3 class="product-title">Nitrato de Zinc</h3>
-                    <p class="product-description">Favorece el desarrollo hormonal, brotación y crecimiento vegetativo.</p>
-                    <a href="#contacto" class="product-btn">Cotizar</a>
-                </div>
-            </article>
-
-            <article class="product-item-card">
-                <div class="product-img-wrapper">
-                    <img src="img/polvos_liquidos.png" alt="QhymerAgro Quelatos Líquidos">
-                    <span class="product-badge">Líquido</span>
-                </div>
-                <div class="product-info">
-                    <h3 class="product-title">Quelatos Líquidos</h3>
-                    <p class="product-description">Microelementos: Zinc, Fierro, Mn, Cu, Mg y Quelato 8 de alta estabilidad.</p>
-                    <a href="#contacto" class="product-btn">Cotizar</a>
-                </div>
-            </article>
-
-            <article class="product-item-card">
-                <div class="product-img-wrapper">
-                    <img src="img/polvos_liquidos.png" alt="QhymerAgro UAN 32">
-                    <span class="product-badge">Líquido</span>
-                </div>
-                <div class="product-info">
-                    <h3 class="product-title">QhymerAgro UAN 32</h3>
-                    <p class="product-description">Solución nitrogenada de tres fuentes: nítrica, amoniacal y ureica.</p>
-                    <a href="#contacto" class="product-btn">Cotizar</a>
-                </div>
-            </article>
-
-            <article class="product-item-card">
-                <div class="product-img-wrapper">
-                    <img src="img/polvos_liquidos.png" alt="QhymerAgro Fosfitos">
-                    <span class="product-badge">Líquido</span>
-                </div>
-                <div class="product-info">
-                    <h3 class="product-title">Fosfitos (Ácidos/Neutros)</h3>
-                    <p class="product-description">Formulaciones que estimulan las defensas naturales y sanidad de la planta.</p>
-                    <a href="#contacto" class="product-btn">Cotizar</a>
-                </div>
-            </article>
-        </div>
-
-        <!-- CATEGORÍA 2: FERTILIZANTES GRANULADOS -->
-        <div class="category-header">
-            <h3>🌱 Fertilizantes Granulados</h3>
-        </div>
-        <div class="products-catalog-grid">
-            <article class="product-item-card">
-                <div class="product-img-wrapper">
-                    <img src="img/enmiendas.png" alt="QhymerAgro Yeso Agrícola Granulado">
-                    <span class="product-badge">Granulado</span>
-                </div>
-                <div class="product-info">
-                    <h3 class="product-title">Yeso Agrícola</h3>
-                    <p class="product-description">Mejora la estructura del suelo, descompacta y aporta Calcio y Azufre.</p>
-                    <a href="#contacto" class="product-btn">Cotizar</a>
-                </div>
-            </article>
-
-            <article class="product-item-card">
-                <div class="product-img-wrapper">
-                    <img src="img/granulados.png" alt="QhymerAgro Boro Granulado">
-                    <span class="product-badge">Granulado</span>
-                </div>
-                <div class="product-info">
-                    <h3 class="product-title">Boro Granulado</h3>
-                    <p class="product-description">Esencial para el crecimiento meristemático, floración y cuajado del fruto.</p>
-                    <a href="#contacto" class="product-btn">Cotizar</a>
-                </div>
-            </article>
-
-            <article class="product-item-card">
-                <div class="product-img-wrapper">
-                    <img src="img/granulados.png" alt="QhymerAgro Mezclas Agrícolas N-P-K">
-                    <span class="product-badge">Granulado</span>
-                </div>
-                <div class="product-info">
-                    <h3 class="product-title">Mezclas Agrícolas N-P-K</h3>
-                    <p class="product-description">Formulaciones físicas a la medida para todo tipo de cultivo agrícola.</p>
-                    <a href="#contacto" class="product-btn">Cotizar</a>
-                </div>
-            </article>
-
-            <article class="product-item-card">
-                <div class="product-img-wrapper">
-                    <img src="img/granulados.png" alt="QhymerAgro Mezclas Forestales">
-                    <span class="product-badge">Granulado</span>
-                </div>
-                <div class="product-info">
-                    <h3 class="product-title">Mezclas Forestales</h3>
-                    <p class="product-description">Combinaciones nutricionales de liberación progresiva para desarrollo forestal.</p>
-                    <a href="#contacto" class="product-btn">Cotizar</a>
-                </div>
-            </article>
-
-            <article class="product-item-card featured-product">
-                <div class="product-img-wrapper">
-                    <img src="img/suelos_fertiles.png" alt="Huechum qhymera">
-                    <span class="product-badge badge-star">⭐ Producto Estrella</span>
-                </div>
-                <div class="product-info">
-                    <h3 class="product-title">Huechum qhymera</h3>
-                    <p class="product-description">Desarrollo 100% natural para potenciar el desarrollo radicular y la microbiota del suelo.</p>
-                    <a href="#contacto" class="product-btn">Cotizar</a>
-                </div>
-            </article>
-
-            <article class="product-item-card">
-                <div class="product-img-wrapper">
-                    <img src="img/granulados.png" alt="QhymerAgro Gránulos Solubles">
-                    <span class="product-badge">Granulado</span>
-                </div>
-                <div class="product-info">
-                    <h3 class="product-title">Gránulos Solubles</h3>
-                    <p class="product-description">Aporte de Mg, Fe, Zn, Cu y Mn en gránulos de rápida disolución.</p>
-                    <a href="#contacto" class="product-btn">Cotizar</a>
-                </div>
-            </article>
-        </div>
-
-        <!-- CATEGORÍA 3: FERTILIZANTES POLVOS -->
-        <div class="category-header">
-            <h3>🍃 Fertilizantes Polvos y Solubles</h3>
-        </div>
-        <div class="products-catalog-grid">
-            <article class="product-item-card">
-                <div class="product-img-wrapper">
-                    <img src="img/cal-agricola.webp" alt="QhymerAgro Yeso Polvo">
-                    <span class="product-badge">Polvo</span>
-                </div>
-                <div class="product-info">
-                    <h3 class="product-title">Yeso en Polvo</h3>
-                    <p class="product-description">Enmienda de suelo ultrafina para acción rápida en la corrección de suelos salinos.</p>
-                    <a href="#contacto" class="product-btn">Cotizar</a>
-                </div>
-            </article>
-
-            <article class="product-item-card">
-                <div class="product-img-wrapper">
-                    <img src="img/cal-agricola.webp" alt="QhymerAgro Carbonato de Calcio">
-                    <span class="product-badge">Polvo</span>
-                </div>
-                <div class="product-info">
-                    <h3 class="product-title">Carbonato de Calcio</h3>
-                    <p class="product-description">Neutraliza la acidez del suelo (sube pH) y aporta Calcio asimilable.</p>
-                    <a href="#contacto" class="product-btn">Cotizar</a>
-                </div>
-            </article>
-
-            <article class="product-item-card">
-                <div class="product-img-wrapper">
-                    <img src="img/npk.webp" alt="QhymerAgro Boro Polvo">
-                    <span class="product-badge">Polvo</span>
-                </div>
-                <div class="product-info">
-                    <h3 class="product-title">Boro en Polvo</h3>
-                    <p class="product-description">Micronutriente en formato soluble de rápida integración foliar o vía suelo.</p>
-                    <a href="#contacto" class="product-btn">Cotizar</a>
-                </div>
-            </article>
-
-            <article class="product-item-card">
-                <div class="product-img-wrapper">
-                    <img src="img/npk.webp" alt="QhymerAgro Mezclas a Pedido">
-                    <span class="product-badge">Polvo</span>
-                </div>
-                <div class="product-info">
-                    <h3 class="product-title">Mezclas a Pedido</h3>
-                    <p class="product-description">Formulaciones químicas y solubles adaptadas según análisis de suelo y cultivo.</p>
-                    <a href="#contacto" class="product-btn">Cotizar</a>
-                </div>
-            </article>
-
-            <article class="product-item-card">
-                <div class="product-img-wrapper">
-                    <img src="img/cal-agricola.webp" alt="QhymerAgro Dolomita">
-                    <span class="product-badge">Polvo</span>
-                </div>
-                <div class="product-info">
-                    <h3 class="product-title">Dolomita (7, 9, 10, 14)</h3>
-                    <p class="product-description">Acondicionador rico en Calcio y Magnesio disponible en distintas granulometrías.</p>
-                    <a href="#contacto" class="product-btn">Cotizar</a>
-                </div>
-            </article>
-
-            <article class="product-item-card">
-                <div class="product-img-wrapper">
-                    <img src="img/npk.webp" alt="QhymerAgro Quelatos Polvo Soluble">
-                    <span class="product-badge">Polvo Soluble</span>
-                </div>
-                <div class="product-info">
-                    <h3 class="product-title">Quelatos en Polvo Soluble</h3>
-                    <p class="product-description">Formulaciones solubles de Fe, Zn, Cu y Mn para fertirriego y aplicación foliar.</p>
-                    <a href="#contacto" class="product-btn">Cotizar</a>
-                </div>
-            </article>
-        </div>
-
-        <!-- PARTE INDUSTRIAL -->
-        <div class="industrial-card" style="margin-top: 2.5rem; background: var(--white); padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-            <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1rem;">
-                <span class="card-icon" style="font-size: 1.8rem;">🏭</span>
-                <h3 style="color: var(--primary-blue); font-size: 1.5rem; margin: 0;">Línea Industrial</h3>
+        <!-- LÍQUIDOS -->
+        <article class="product-item-card" data-category="liquidos">
+            <div class="product-img-wrapper">
+                <img src="img/polvos_liquidos.png" alt="QhymerAgro N-P-K">
+                <span class="product-badge">Líquido</span>
             </div>
-            <p style="color: #4a5568; margin-bottom: 1rem;">Insumos químicos y materias primas especializadas para procesos industriales y de manufactura:</p>
-            <ul style="color: #4a5568; padding-left: 1.2rem; line-height: 1.8;">
+            <div class="product-info">
+                <h4 class="product-title">QhymerAgro N-P-K</h4>
+                <p class="product-description">Formulación balanceada de nitrógeno, fósforo y potasio de rápida absorción.</p>
+                <a href="#contacto" class="product-btn">Cotizar</a>
+            </div>
+        </article>
+
+        <article class="product-item-card" data-category="liquidos">
+            <div class="product-img-wrapper">
+                <img src="img/polvos_liquidos.png" alt="QhymerAgro Nitrol 26">
+                <span class="product-badge">Líquido</span>
+            </div>
+            <div class="product-info">
+                <h4 class="product-title">QhymerAgro Nitrol 26</h4>
+                <p class="product-description">Fuente concentrada de nitrógeno foliar y radicular de alta eficiencia.</p>
+                <a href="#contacto" class="product-btn">Cotizar</a>
+            </div>
+        </article>
+
+        <article class="product-item-card" data-category="liquidos">
+            <div class="product-img-wrapper">
+                <img src="img/polvos_liquidos.png" alt="QhymerAgro Fosfato de Urea">
+                <span class="product-badge">Líquido</span>
+            </div>
+            <div class="product-info">
+                <h4 class="product-title">Fosfato de Urea</h4>
+                <p class="product-description">Aporte acidificante de fósforo y nitrógeno para sistemas de riego.</p>
+                <a href="#contacto" class="product-btn">Cotizar</a>
+            </div>
+        </article>
+
+        <article class="product-item-card" data-category="liquidos">
+            <div class="product-img-wrapper">
+                <img src="img/polvos_liquidos.png" alt="QhymerAgro Citrato de Potasio">
+                <span class="product-badge">Líquido</span>
+            </div>
+            <div class="product-info">
+                <h4 class="product-title">Citrato de Potasio</h4>
+                <p class="product-description">Estimula el llenado, calibre y maduración de frutos de alta calidad.</p>
+                <a href="#contacto" class="product-btn">Cotizar</a>
+            </div>
+        </article>
+
+        <article class="product-item-card" data-category="liquidos">
+            <div class="product-img-wrapper">
+                <img src="img/polvos_liquidos.png" alt="QhymerAgro Ácido Fosfórico">
+                <span class="product-badge">Líquido</span>
+            </div>
+            <div class="product-info">
+                <h4 class="product-title">Ácido Fosfórico</h4>
+                <p class="product-description">Acondicionador de agua, corrector de pH y corrector nutricional.</p>
+                <a href="#contacto" class="product-btn">Cotizar</a>
+            </div>
+        </article>
+
+        <article class="product-item-card" data-category="liquidos">
+            <div class="product-img-wrapper">
+                <img src="img/polvos_liquidos.png" alt="QhymerAgro Fosfato Dipotásico">
+                <span class="product-badge">Líquido</span>
+            </div>
+            <div class="product-info">
+                <h4 class="product-title">Fosfato Dipotásico</h4>
+                <p class="product-description">Nutrición de rápida asimilación para etapas de floración y cuajado.</p>
+                <a href="#contacto" class="product-btn">Cotizar</a>
+            </div>
+        </article>
+
+        <article class="product-item-card" data-category="liquidos">
+            <div class="product-img-wrapper">
+                <img src="img/polvos_liquidos.png" alt="QhymerAgro Urea Líquida">
+                <span class="product-badge">Líquido</span>
+            </div>
+            <div class="product-info">
+                <h4 class="product-title">Urea Líquida</h4>
+                <p class="product-description">Suministro directo de nitrógeno altamente disponible.</p>
+                <a href="#contacto" class="product-btn">Cotizar</a>
+            </div>
+        </article>
+
+        <article class="product-item-card" data-category="liquidos">
+            <div class="product-img-wrapper">
+                <img src="img/polvos_liquidos.png" alt="QhymerAgro Nitrato de Zinc">
+                <span class="product-badge">Líquido</span>
+            </div>
+            <div class="product-info">
+                <h4 class="product-title">Nitrato de Zinc</h4>
+                <p class="product-description">Favorece el desarrollo hormonal, brotación y crecimiento vegetativo.</p>
+                <a href="#contacto" class="product-btn">Cotizar</a>
+            </div>
+        </article>
+
+        <article class="product-item-card" data-category="liquidos">
+            <div class="product-img-wrapper">
+                <img src="img/polvos_liquidos.png" alt="QhymerAgro Quelatos Líquidos">
+                <span class="product-badge">Líquido</span>
+            </div>
+            <div class="product-info">
+                <h4 class="product-title">Quelatos Líquidos</h4>
+                <p class="product-description">Microelementos: Zinc, Fierro, Mn, Cu, Mg y Quelato 8 de alta estabilidad.</p>
+                <a href="#contacto" class="product-btn">Cotizar</a>
+            </div>
+        </article>
+
+        <article class="product-item-card" data-category="liquidos">
+            <div class="product-img-wrapper">
+                <img src="img/polvos_liquidos.png" alt="QhymerAgro UAN 32">
+                <span class="product-badge">Líquido</span>
+            </div>
+            <div class="product-info">
+                <h4 class="product-title">QhymerAgro UAN 32</h4>
+                <p class="product-description">Solución nitrogenada de tres fuentes: nítrica, amoniacal y ureica.</p>
+                <a href="#contacto" class="product-btn">Cotizar</a>
+            </div>
+        </article>
+
+        <article class="product-item-card" data-category="liquidos">
+            <div class="product-img-wrapper">
+                <img src="img/polvos_liquidos.png" alt="QhymerAgro Fosfitos">
+                <span class="product-badge">Líquido</span>
+            </div>
+            <div class="product-info">
+                <h4 class="product-title">Fosfitos (Ácidos/Neutros)</h4>
+                <p class="product-description">Formulaciones que estimulan las defensas naturales y sanidad de la planta.</p>
+                <a href="#contacto" class="product-btn">Cotizar</a>
+            </div>
+        </article>
+
+        <!-- GRANULADOS -->
+        <article class="product-item-card" data-category="granulados">
+            <div class="product-img-wrapper">
+                <img src="img/enmiendas.png" alt="QhymerAgro Yeso Agrícola Granulado">
+                <span class="product-badge">Granulado</span>
+            </div>
+            <div class="product-info">
+                <h4 class="product-title">Yeso Agrícola</h4>
+                <p class="product-description">Mejora la estructura del suelo, descompacta y aporta Calcio y Azufre.</p>
+                <a href="#contacto" class="product-btn">Cotizar</a>
+            </div>
+        </article>
+
+        <article class="product-item-card" data-category="granulados">
+            <div class="product-img-wrapper">
+                <img src="img/granulados.png" alt="QhymerAgro Boro Granulado">
+                <span class="product-badge">Granulado</span>
+            </div>
+            <div class="product-info">
+                <h4 class="product-title">Boro Granulado</h4>
+                <p class="product-description">Esencial para el crecimiento meristemático, floración y cuajado del fruto.</p>
+                <a href="#contacto" class="product-btn">Cotizar</a>
+            </div>
+        </article>
+
+        <article class="product-item-card" data-category="granulados">
+            <div class="product-img-wrapper">
+                <img src="img/granulados.png" alt="QhymerAgro Mezclas Agrícolas N-P-K">
+                <span class="product-badge">Granulado</span>
+            </div>
+            <div class="product-info">
+                <h4 class="product-title">Mezclas Agrícolas N-P-K</h4>
+                <p class="product-description">Formulaciones físicas a la medida para todo tipo de cultivo agrícola.</p>
+                <a href="#contacto" class="product-btn">Cotizar</a>
+            </div>
+        </article>
+
+        <article class="product-item-card" data-category="granulados">
+            <div class="product-img-wrapper">
+                <img src="img/granulados.png" alt="QhymerAgro Mezclas Forestales">
+                <span class="product-badge">Granulado</span>
+            </div>
+            <div class="product-info">
+                <h4 class="product-title">Mezclas Forestales</h4>
+                <p class="product-description">Combinaciones nutricionales de liberación progresiva para desarrollo forestal.</p>
+                <a href="#contacto" class="product-btn">Cotizar</a>
+            </div>
+        </article>
+
+        <article class="product-item-card featured-product" data-category="granulados">
+            <div class="product-img-wrapper">
+                <img src="img/suelos_fertiles.png" alt="Huechum qhymera">
+                <span class="product-badge badge-star">⭐ Producto Estrella</span>
+            </div>
+            <div class="product-info">
+                <h4 class="product-title">Huechum qhymera</h4>
+                <p class="product-description">Desarrollo 100% natural para potenciar el desarrollo radicular y la microbiota del suelo.</p>
+                <a href="#contacto" class="product-btn">Cotizar</a>
+            </div>
+        </article>
+
+        <article class="product-item-card" data-category="granulados">
+            <div class="product-img-wrapper">
+                <img src="img/granulados.png" alt="QhymerAgro Gránulos Solubles">
+                <span class="product-badge">Granulado</span>
+            </div>
+            <div class="product-info">
+                <h4 class="product-title">Gránulos Solubles</h4>
+                <p class="product-description">Aporte de Mg, Fe, Zn, Cu y Mn en gránulos de rápida disolución.</p>
+                <a href="#contacto" class="product-btn">Cotizar</a>
+            </div>
+        </article>
+
+        <!-- POLVOS Y SOLUBLES -->
+        <article class="product-item-card" data-category="polvos">
+            <div class="product-img-wrapper">
+                <img src="img/cal-agricola.webp" alt="QhymerAgro Yeso Polvo">
+                <span class="product-badge">Polvo</span>
+            </div>
+            <div class="product-info">
+                <h4 class="product-title">Yeso en Polvo</h4>
+                <p class="product-description">Enmienda de suelo ultrafina para acción rápida en la corrección de suelos salinos.</p>
+                <a href="#contacto" class="product-btn">Cotizar</a>
+            </div>
+        </article>
+
+        <article class="product-item-card" data-category="polvos">
+            <div class="product-img-wrapper">
+                <img src="img/cal-agricola.webp" alt="QhymerAgro Carbonato de Calcio">
+                <span class="product-badge">Polvo</span>
+            </div>
+            <div class="product-info">
+                <h4 class="product-title">Carbonato de Calcio</h4>
+                <p class="product-description">Neutraliza la acidez del suelo (sube pH) y aporta Calcio asimilable.</p>
+                <a href="#contacto" class="product-btn">Cotizar</a>
+            </div>
+        </article>
+
+        <article class="product-item-card" data-category="polvos">
+            <div class="product-img-wrapper">
+                <img src="img/npk.webp" alt="QhymerAgro Boro Polvo">
+                <span class="product-badge">Polvo</span>
+            </div>
+            <div class="product-info">
+                <h4 class="product-title">Boro en Polvo</h4>
+                <p class="product-description">Micronutriente en formato soluble de rápida integración foliar o vía suelo.</p>
+                <a href="#contacto" class="product-btn">Cotizar</a>
+            </div>
+        </article>
+
+        <article class="product-item-card" data-category="polvos">
+            <div class="product-img-wrapper">
+                <img src="img/npk.webp" alt="QhymerAgro Mezclas a Pedido">
+                <span class="product-badge">Polvo</span>
+            </div>
+            <div class="product-info">
+                <h4 class="product-title">Mezclas a Pedido</h4>
+                <p class="product-description">Formulaciones químicas y solubles adaptadas según análisis de suelo y cultivo.</p>
+                <a href="#contacto" class="product-btn">Cotizar</a>
+            </div>
+        </article>
+
+        <article class="product-item-card" data-category="polvos">
+            <div class="product-img-wrapper">
+                <img src="img/cal-agricola.webp" alt="QhymerAgro Dolomita">
+                <span class="product-badge">Polvo</span>
+            </div>
+            <div class="product-info">
+                <h4 class="product-title">Dolomita (7, 9, 10, 14)</h4>
+                <p class="product-description">Acondicionador rico en Calcio y Magnesio disponible en distintas granulometrías.</p>
+                <a href="#contacto" class="product-btn">Cotizar</a>
+            </div>
+        </article>
+
+        <article class="product-item-card" data-category="polvos">
+            <div class="product-img-wrapper">
+                <img src="img/npk.webp" alt="QhymerAgro Quelatos Polvo Soluble">
+                <span class="product-badge">Polvo Soluble</span>
+            </div>
+            <div class="product-info">
+                <h4 class="product-title">Quelatos en Polvo Soluble</h4>
+                <p class="product-description">Formulaciones solubles de Fe, Zn, Cu y Mn para fertirriego y aplicación foliar.</p>
+                <a href="#contacto" class="product-btn">Cotizar</a>
+            </div>
+        </article>
+
+        <!-- INDUSTRIAL -->
+        <article class="product-item-card" data-category="industrial">
+            <div class="product-img-wrapper">
+                <img src="img/granulados.png" alt="Insumos Químicos Industriales">
+                <span class="product-badge">Industrial</span>
+            </div>
+            <div class="product-info">
+                <h4 class="product-title">Insumos Químicos Industriales</h4>
+                <p class="product-description">Materias primas de alta pureza para diversos procesos de manufactura.</p>
+                <a href="#contacto" class="product-btn">Cotizar</a>
+            </div>
+        </article>
+
+        <article class="product-item-card" data-category="industrial">
+            <div class="product-img-wrapper">
+                <img src="img/polvos_liquidos.png" alt="Compuestos de Nutrición y Proceso">
+                <span class="product-badge">Industrial</span>
+            </div>
+            <div class="product-info">
+                <h4 class="product-title">Compuestos de Nutrición y Proceso</h4>
+                <p class="product-description">Soluciones técnicas específicas para procesos agroindustriales.</p>
+                <a href="#contacto" class="product-btn">Cotizar</a>
+            </div>
+        </article>
+
+        <article class="product-item-card" data-category="industrial">
+            <div class="product-img-wrapper">
+                <img src="img/npk.webp" alt="Formulaciones Técnicas a Medida">
+                <span class="product-badge">Industrial</span>
+            </div>
+            <div class="product-info">
+                <h4 class="product-title">Formulaciones Técnicas a Medida</h4>
+                <p class="product-description">Desarrollo de mezclas especializadas según los requerimientos del cliente.</p>
+                <a href="#contacto" class="product-btn">Cotizar</a>
+            </div>
+        </article>
+
+    </div>
+        <!-- PARTE INDUSTRIAL -->
+        <div class="industrial-card">
+            <div class="industrial-header">
+                <span class="card-icon" aria-hidden="true">🏭</span>
+                <h3>Línea Industrial</h3>
+            </div>
+            <p>Insumos químicos y materias primas especializadas para procesos industriales y de manufactura:</p>
+            <ul>
                 <li>Insumos Químicos Industriales</li>
                 <li>Compuestos de Nutrición y Proceso</li>
                 <li>Formulaciones Técnicas a Medida</li>
@@ -447,9 +479,9 @@
         </div>
 
         <!-- GARANTÍA Y CALIDAD -->
-        <div class="products-description" style="margin-top: 2.5rem; background: var(--white); padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 4px solid var(--primary-blue);">
-            <h3 style="color: var(--primary-blue); margin-bottom: 0.8rem;">Garantía y Calidad en Todos Nuestros Productos</h3>
-            <p style="color: #4a5568; line-height: 1.7;">
+        <div class="products-description">
+            <h3>Garantía y Calidad en Todos Nuestros Productos</h3>
+            <p>
                 En QhymerAgro garantizamos estándares rigurosos en la selección de nuestras materias primas y formulaciones. Ya sea para optimizar el rendimiento agrícola mediante granulados, líquidos o polvos de alta asimilación, nuestras soluciones están diseñadas para ofrecer máxima eficiencia, homogeneidad y resultados medibles en cada aplicación.
             </p>
         </div>
@@ -463,22 +495,22 @@
         </div>
         <div class="benefits-grid">
             <div class="benefit-item">
-                <div class="benefit-icon">📈</div>
+                <div class="benefit-icon" aria-hidden="true">📈</div>
                 <h3>Mayor Rendimiento</h3>
                 <p>Nutrición precisa y de rápida absorción que maximiza la calidad y producción.</p>
             </div>
             <div class="benefit-item">
-                <div class="benefit-icon">🌍</div>
+                <div class="benefit-icon" aria-hidden="true">🌍</div>
                 <h3>Suelos Saludables</h3>
                 <p>Enmiendas que corrigen la acidez, compactación y salinidad de la tierra.</p>
             </div>
             <div class="benefit-item">
-                <div class="benefit-icon">🔬</div>
+                <div class="benefit-icon" aria-hidden="true">🔬</div>
                 <h3>Formatos Adaptables</h3>
                 <p>Granulados, polvos solubles y líquidos adaptados a cada necesidad de aplicación.</p>
             </div>
             <div class="benefit-item">
-                <div class="benefit-icon">🤝</div>
+                <div class="benefit-icon" aria-hidden="true">🤝</div>
                 <h3>Asesoría Especializada</h3>
                 <p>Atención técnica orientada a definir la solución ideal para cada cliente.</p>
             </div>
@@ -493,19 +525,19 @@
         </div>
         <div class="crops-grid">
             <div class="crop-card">
-                <span class="crop-emoji">🍇</span>
+                <span class="crop-emoji" aria-hidden="true">🍇</span>
                 <h3>Frutales y Viñedos</h3>
             </div>
             <div class="crop-card">
-                <span class="crop-emoji">🥑</span>
+                <span class="crop-emoji" aria-hidden="true">🥑</span>
                 <h3>Hortalizas y Paltos</h3>
             </div>
             <div class="crop-card">
-                <span class="crop-emoji">🌾</span>
+                <span class="crop-emoji" aria-hidden="true">🌾</span>
                 <h3>Cereales y Granos</h3>
             </div>
             <div class="crop-card">
-                <span class="crop-emoji">🍒</span>
+                <span class="crop-emoji" aria-hidden="true">🍒</span>
                 <h3>Berries y Cerezos</h3>
             </div>
         </div>
@@ -543,8 +575,8 @@
     <div class="whatsapp-container">
         <div class="whatsapp-tooltip">¿Te ayudo?</div>
         <a href="https://wa.me/+569?text=Hola,%20me%20gustaría%20obtener%20más%20información%20sobre%20sus%20productos" class="whatsapp-float" target="_blank" rel="noopener noreferrer" title="Contactar por WhatsApp">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3 18.6-68.1-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true">
+                <path fill="currentColor" d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3 18.6-68.1-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
             </svg>
         </a>
     </div>
