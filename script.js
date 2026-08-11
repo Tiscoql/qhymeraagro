@@ -38,3 +38,27 @@ const slides = document.querySelectorAll('.carousel-slide');
         });
 
         startAutoPlay();
+
+document.addEventListener('DOMContentLoaded', () => {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const productCards = document.querySelectorAll('.product-item-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Remover clase 'active' de todos los botones
+      filterBtns.forEach(b => b.classList.remove('active'));
+      // Agregar la clase 'active' al botón clickeado
+      btn.classList.add('active');
+
+      const filterValue = btn.getAttribute('data-filter');
+
+      productCards.forEach(card => {
+        if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+          card.classList.remove('hide');
+        } else {
+          card.classList.add('hide');
+        }
+      });
+    });
+  });
+});
