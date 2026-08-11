@@ -1146,3 +1146,43 @@ footer {
         font-size: 1.8rem;
     }
 }
+/* Estilos para los botones de filtrado */
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.filter-btn {
+    background-color: #f4f4f4;
+    color: #333;
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.filter-btn.active {
+    background-color: #2e7d32; /* Verde primario */
+    color: #ffffff;
+    border-color: #2e7d32;
+    box-shadow: 0 4px 10px rgba(46, 125, 50, 0.2);
+}
+
+/* Transición suave para ocultar/mostrar tarjetas */
+.product-item-card {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.product-item-card.hide {
+    display: none !important;
+}
