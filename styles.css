@@ -83,6 +83,7 @@ header {
     font-weight: 600;
     color: var(--primary-green);
     letter-spacing: 0.5px;
+    margin-top: 2px;
 }
 
 nav ul {
@@ -361,6 +362,20 @@ nav ul li .nav-btn:hover {
     margin-bottom: 0.5rem;
 }
 
+/* Encabezados de Categoría de Productos */
+.category-header {
+    margin: 2.5rem 0 1.2rem 0;
+    border-bottom: 2px solid #d8e2dc;
+    padding-bottom: 0.5rem;
+}
+
+.category-header h3 {
+    font-size: 1.35rem;
+    color: var(--primary-blue);
+    font-weight: 700;
+    margin: 0;
+}
+
 /* Estilos de la Sección Productos */
 .products-banner-container {
     text-align: center;
@@ -397,28 +412,29 @@ nav ul li .nav-btn:hover {
     font-size: 1.05rem;
 }
 
-/* Catálogo de Productos Individuales */
+/* Catálogo de Productos Individuales (Escritorio) */
 .products-catalog-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    padding: 1rem 0;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.2rem;
+    padding: 0.5rem 0 1.5rem 0;
 }
 
 .product-item-card {
     background: var(--white);
-    border-radius: 12px;
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(27, 77, 46, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(27, 77, 46, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     border: 1px solid #d8e2dc;
 }
 
 .product-item-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 25px rgba(27, 77, 46, 0.15);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(27, 77, 46, 0.12);
 }
 
 .product-item-card.featured-product {
@@ -428,7 +444,7 @@ nav ul li .nav-btn:hover {
 .product-img-wrapper {
     position: relative;
     width: 100%;
-    height: 200px;
+    height: 150px;
     background-color: var(--light-green);
 }
 
@@ -440,51 +456,53 @@ nav ul li .nav-btn:hover {
 
 .product-badge {
     position: absolute;
-    top: 12px;
-    right: 12px;
-    background: rgba(27, 77, 46, 0.8);
+    top: 8px;
+    right: 8px;
+    background: rgba(27, 77, 46, 0.85);
     color: var(--white);
-    padding: 4px 10px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 500;
+    font-size: 0.65rem;
+    padding: 3px 7px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: 600;
 }
 
 .product-badge.badge-star {
-    background: var(--primary-green);
+    background: #d97706;
     font-weight: 700;
 }
 
 .product-info {
-    padding: 1.5rem;
+    padding: 0.8rem;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
 }
 
 .product-title {
-    font-size: 1.25rem;
+    font-size: 0.95rem;
     font-weight: 700;
     color: var(--dark-green);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
 }
 
 .product-description {
-    font-size: 0.95rem;
+    font-size: 0.8rem;
     color: #384e40;
-    line-height: 1.5;
-    margin-bottom: 1.5rem;
+    line-height: 1.35;
+    margin-bottom: 0.8rem;
     flex-grow: 1;
 }
 
 .product-btn {
-    display: inline-block;
+    display: block;
     text-align: center;
     background-color: var(--primary-green);
     color: var(--white);
-    padding: 0.7rem 1.2rem;
-    border-radius: 8px;
+    padding: 0.45rem 0.5rem;
+    border-radius: 6px;
     text-decoration: none;
+    font-size: 0.8rem;
     font-weight: 600;
     transition: background-color 0.2s ease;
 }
@@ -1027,6 +1045,12 @@ footer {
 }
 
 /* Responsivo (Media Queries) */
+@media (max-width: 1024px) {
+    .products-catalog-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
 @media (max-width: 768px) {
     body {
         padding-top: 130px;
@@ -1051,6 +1075,37 @@ footer {
         height: 300px;
     }
     
+    /* Configuración de Cuadrícula de Productos para Móvil: 2 productos por fila */
+    .products-catalog-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.6rem;
+    }
+
+    .product-info {
+        padding: 0.5rem;
+    }
+
+    .product-img-wrapper {
+        height: 110px;
+    }
+
+    .product-title {
+        font-size: 0.82rem;
+    }
+
+    .product-description {
+        font-size: 0.7rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .product-btn {
+        padding: 0.35rem 0.3rem;
+        font-size: 0.72rem;
+    }
+
     .products-banner-container img {
         max-height: 220px;
     }
