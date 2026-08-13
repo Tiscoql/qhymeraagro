@@ -680,9 +680,12 @@
 <section class="contact-section" id="contacto">
     <h2>Contáctanos</h2>
     <p>Escríbenos para cotizaciones o solicitudes de asesoría técnica.</p>
-    
-    <!-- Se agrega name="contacto" y data-netlify="true" -->
-    <form class="contact-form" name="contacto" method="POST" data-netlify="true">
+
+    <!-- Formulario listo para Netlify -->
+    <form class="contact-form" name="contacto" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <!-- CAMPO OCULTO OBLIGATORIO PARA NETLIFY -->
+        <input type="hidden" name="form-name" value="contacto" />
+
         <div class="form-group">
             <label for="nombre">Nombre completo</label>
             <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required>
@@ -706,7 +709,6 @@
         <button type="submit" class="submit-btn">Enviar Mensaje</button>
     </form>
 </section>
-
    <!-- Footer -->
     <footer>
         <div class="footer-container">
