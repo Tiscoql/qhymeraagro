@@ -676,16 +676,12 @@
         </a>
     </div>
 
-<!-- Contacto -->
+<!-- Contacto con Formspree -->
 <section class="contact-section" id="contacto">
     <h2>Contáctanos</h2>
     <p>Escríbenos para cotizaciones o solicitudes de asesoría técnica.</p>
-
-    <!-- Formulario listo para Netlify -->
-    <form class="contact-form" name="contacto" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-        <!-- CAMPO OCULTO OBLIGATORIO PARA NETLIFY -->
-        <input type="hidden" name="form-name" value="contacto" />
-
+    
+    <form class="contact-form" action="https://formspree.io/f/mppalwne" method="POST">
         <div class="form-group">
             <label for="nombre">Nombre completo</label>
             <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required>
@@ -693,7 +689,8 @@
 
         <div class="form-group">
             <label for="email">Correo electrónico</label>
-            <input type="email" id="email" name="email" placeholder="nombre@ejemplo.com" required>
+            <!-- Importante: _replyto permite responder directamente al cliente desde tu correo -->
+            <input type="email" id="email" name="_replyto" placeholder="nombre@ejemplo.com" required>
         </div>
 
         <div class="form-group">
