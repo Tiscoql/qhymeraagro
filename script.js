@@ -155,4 +155,50 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+
+    // ==========================================
+    // 4. ENVÍO DE FORMULARIO SIN REDIRECCIÓN (FORMSPREE)
+    // ==========================================
+    const contactForm = document.querySelector('.contact-form');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault(); // Evita salir de la página hacia la web externa de Formspree
+
+            const submitBtn = contactForm.querySelector('.submit-btn');
+            const originalBtnText = submitBtn ? submitBtn.textContent : 'Enviar Mensaje';
+
+            if (submitBtn) {
+                submitBtn.textContent = 'Enviando...';
+                submitBtn.disabled = true;
+            }
+
+            const formData = new FormData(contactForm);
+
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: contactForm.method || 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    alert('¡Gracias! Tu mensaje ha sido enviado con éxito. Te responderemos a la brevedad.');
+                    contactForm.reset(); // Limpia los campos tras enviar
+                } else {
+                    alert('Ocurrió un problema al enviar el mensaje. Inténtalo nuevamente o escríbenos por WhatsApp.');
+                }
+            } catch (error) {
+                alert('Error de conexión. Por favor verifica tu red e inténtalo de nuevo.');
+            } finally {
+                if (submitBtn) {
+                    submitBtn.textContent = originalBtnText;
+                    submitBtn.disabled = false;
+                }
+            }
+        });
+    }
+
 });
